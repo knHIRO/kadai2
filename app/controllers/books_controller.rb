@@ -20,7 +20,7 @@ class BooksController < ApplicationController
        redirect_to book_path(@book.id)
     else
       render 'edit'
-    end  
+    end
   end
 
   def destroy
@@ -32,7 +32,7 @@ class BooksController < ApplicationController
   def create
     @book = Book.new(book_params)
     if @book.save
-      flash[:notice] = "投稿に成功しました。"
+      flash[:notice] = "Book was successfully created."
       redirect_to book_path(@book)
     else
       @books = Book.all
